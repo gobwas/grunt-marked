@@ -1,0 +1,49 @@
+{
+  "name": "grunt-marked",
+  "description": "Plugin that compiles markdown files into html, using marked parser.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gobwas/grunt-marked",
+  "author": {
+    "name": "Sergey Kamardin <gobwas@gmail.com>",
+    "email": "gobwas@gmail.com",
+    "url": "https://github.com/gobwas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gobwas/grunt-marked.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gobwas/grunt-marked/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/gobwas/grunt-marked/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "marked": "~0.3.1",
+    "async": "~0.2.10",
+    "highlight.js": "~8.0.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "gruntplugin",
+    "marked",
+    "markdown"
+  ]
+}
