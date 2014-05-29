@@ -78,10 +78,12 @@ grunt.initConfig({
       smartLists: true,
       smartypants: false
     },
-    files: {
-      'dest/my.html': 'src/my.md',
-      'dest/some.html': 'src/some.md'
-    },
+    dist: {
+      files: {
+        'dest/my.html': 'src/my.md',
+        'dest/some.html': 'src/some.md'
+      }
+    }
   },
 });
 ```
