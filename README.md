@@ -53,9 +53,11 @@ In this example, the default options are used to compile markdown files.
 ```js
 grunt.initConfig({
   marked: {
-    files: {
-      'dest/my.html': ['src/my.md', 'src/header.md'],
-    },
+    dist: {
+      files: {
+        'dest/my.html': ['src/my.md', 'src/header.md'],
+      }
+    }
   },
 });
 ```
