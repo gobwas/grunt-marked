@@ -27,7 +27,8 @@ module.exports = function(grunt) {
                 smartLists:  true,
                 smartypants: false,
                 highlight:   true
-            });
+            }),
+            files = this.files;
 
         options.renderer = new marked.Renderer();
 
@@ -42,7 +43,7 @@ module.exports = function(grunt) {
 
         marked.setOptions(options);
 
-        async.each(this.files, function(file, next) {
+        async.each(files, function(file, next) {
             var sources, destination;
 
             destination = file.dest;
@@ -63,21 +64,14 @@ module.exports = function(grunt) {
                 }
 
                 grunt.file.write(destination, marked(contents.join(os.EOL)));
-                grunt.log.ok(util.format('Successfully rendered markdown to "%s"', destination));
+                grunt.verbose.writeln(util.format('Successfully rendered markdown to "%s"', destination));
                 next();
-
-                // fs.writeFile(destination, marked(contents.join(os.EOL)), function(err) {
-                //    if (err) {
-                //        grunt.log.error(util.format('Could not write file "%s"', destination));
-                //    } else {
-                //        grunt.log.ok(util.format('Successfully rendered markdown to "%s"', destination));
-                //    }
-                //  
-                //    next(err);
-                //});
             });
 
-        }, done);
+        }, function() {
+          grunt.log.ok(files.length + ' ' + grunt.util.pluralize(files.length, 'file/files') + ' created.');
+          done();
+        });
     });
 
 };
