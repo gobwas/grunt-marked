@@ -1,7 +1,7 @@
 {
   "name": "grunt-marked",
   "description": "Plugin that compiles markdown files into html, using marked parser.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/gobwas/grunt-marked",
   "author": {
     "name": "Sergey Kamardin <gobwas@gmail.com>",
