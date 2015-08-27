@@ -30,7 +30,9 @@ module.exports = function(grunt) {
             }),
             files = this.files;
 
-        options.renderer = new marked.Renderer();
+        if (!options.renderer) {
+          options.renderer = new marked.Renderer();
+        }
 
         // install highlight.js
         if (options.highlight) {
