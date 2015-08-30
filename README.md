@@ -45,6 +45,12 @@ Default value: `TRUE`
 
 A boolean flag that shows, use [highlight.js](https://github.com/isagalaev/highlight.js) plugin or not to highlight the syntax.
 
+#### options.renderer
+Type: `Object`
+Default value: `marked.Renderer`
+
+Renderer to use.
+
 ### Usage Examples
 
 #### Default Options
