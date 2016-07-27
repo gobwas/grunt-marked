@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 
                 var content = contents.join(os.EOL)
                 if(options.ignoreheader){
-                    var content = content.replace(/---.*[\s\S]+.*?\/---/g, '')
+                    content = content.replace(/---.*[\s\S]+.*?\/---/g, '')
                 }
 
                 grunt.file.write(destination, marked(content));
