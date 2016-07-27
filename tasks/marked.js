@@ -26,7 +26,8 @@ module.exports = function(grunt) {
                 sanitize:    true,
                 smartLists:  true,
                 smartypants: false,
-                highlight:   true
+                highlight:   true,
+                ignoreheader: false
             }),
             files = this.files;
 
@@ -65,7 +66,12 @@ module.exports = function(grunt) {
                     return next(err);
                 }
 
-                grunt.file.write(destination, marked(contents.join(os.EOL)));
+                var content = contents.join(os.EOL)
+                if(options.ignoreheader){
+                    var content = content.replace(/---.*[\s\S]+.*?\/---/g, '')
+                }
+
+                grunt.file.write(destination, marked(content));
                 grunt.verbose.writeln(util.format('Successfully rendered markdown to "%s"', destination));
                 next();
             });

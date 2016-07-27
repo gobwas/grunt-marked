@@ -32,8 +32,16 @@ module.exports = function(grunt) {
     marked: {
       default_options: {
         files: [
-          {src: ['test/fixtures/some.md'], dest: 'tmp/default_options/some.html'}
-        ],
+          {src: ['test/fixtures/some.md'], dest: 'test/expected/some.html'}
+        ]
+      },
+      header:{
+        options:{
+          ignoreheader:true
+        },
+        files: [
+          {src: ['test/fixtures/with_header.md'], dest: 'test/expected/with_header.html'}
+        ]
       }
     },
 
